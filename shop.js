@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
+
 // Load products from API
 async function loadProducts() {
     const loading = document.getElementById('loading');
