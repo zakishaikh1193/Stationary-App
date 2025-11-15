@@ -2,6 +2,23 @@ from flask import Blueprint, jsonify
 
 main_bp = Blueprint('main', __name__)
 
+@main_bp.route('/api', methods=['GET'])
+def api_root():
+    """API root endpoint - health check."""
+    return jsonify({
+        'status': 'ok',
+        'message': 'Stationary App API is running',
+        'version': '1.0.0'
+    }), 200
+
+@main_bp.route('/api/health', methods=['GET'])
+def health():
+    """Health check endpoint."""
+    return jsonify({
+        'status': 'ok',
+        'message': 'API is healthy'
+    }), 200
+
 @main_bp.route('/api/items', methods=['GET'])
 def get_items():
     # This is just a sample response - you can modify based on your needs
