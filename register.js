@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const payload = { fullName, email, password, phone };
 
         try {
-            const res = await fetch('http://127.0.0.1:5000/api/register', {
+            const res = await fetch('https://stationary-app-production.up.railway.app/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

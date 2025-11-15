@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:5000/api';
+const API_URL = 'https://stationary-app-production.up.railway.app/api';
 let currentProductId = null;
 let deleteProductId = null;
 
