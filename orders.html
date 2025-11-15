@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Student Stationery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">📚 Student Stationery Shop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a></li>
+                <li><a href="orders.html" class="active">My Orders</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="orders-header">
+                <h1><i class="fas fa-receipt"></i> My Orders</h1>
+                <p>View and track all your order history</p>
+            </div>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading orders...</p>
+            </div>
+
+            <div class="orders-list" id="ordersList">
+                <!-- Orders will be loaded here -->
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <i class="fas fa-shopping-bag"></i>
+                <h2>No Orders Yet</h2>
+                <p>You haven't placed any orders. Start shopping to see your order history here!</p>
+                <a href="shop.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Start Shopping
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Student Stationery Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Order Detail Modal -->
+    <div id="orderDetailModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <div id="orderDetailBody"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="orders.js"></script>
+</body>
+</html>
+

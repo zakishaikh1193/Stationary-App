@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Student Stationery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">📚 Student Stationery Shop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html" class="active cart-link">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="cart-header">
+                <h1><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+            </div>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading cart...</p>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be loaded here -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Items:</span>
+                        <span id="itemCount">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (10%):</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    <button id="checkoutBtn" class="btn btn-primary btn-large">
+                        <i class="fas fa-credit-card"></i> Proceed to Checkout
+                    </button>
+                    <a href="shop.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </a>
+                </div>
+            </div>
+
+            <div id="emptyCart" class="empty-state" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your Cart is Empty</h2>
+                <p>Add some products to your cart to get started!</p>
+                <a href="shop.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Browse Products
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Student Stationery Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
+
