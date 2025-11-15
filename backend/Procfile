@@ -1,2 +1,2 @@
-web: gunicorn -w 1 -b 0.0.0.0:$PORT --timeout 120 --access-logfile - --error-logfile - --log-level debug --worker-class sync run:app
+web: gunicorn -c gunicorn.conf.py run:app
 

@@ -14,9 +14,12 @@ def api_root():
 @main_bp.route('/api/health', methods=['GET'])
 def health():
     """Health check endpoint."""
+    import os
     return jsonify({
         'status': 'ok',
-        'message': 'API is healthy'
+        'message': 'API is healthy',
+        'port': os.environ.get('PORT', 'unknown'),
+        'worker_pid': os.getpid()
     }), 200
 
 @main_bp.route('/api/items', methods=['GET'])
