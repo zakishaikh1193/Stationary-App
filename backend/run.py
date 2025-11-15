@@ -1,8 +1,31 @@
 from app import create_app
 import logging
 import os
+import sys
 
-app = create_app()
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+    stream=sys.stdout
+)
+
+logger = logging.getLogger(__name__)
+
+try:
+    logger.info("Creating Flask application...")
+    app = create_app()
+    logger.info("Flask application created successfully")
+    
+    # Test that app is callable (required for WSGI)
+    if not callable(app):
+        logger.error("App is not callable!")
+        sys.exit(1)
+    
+    logger.info("Application is ready for gunicorn")
+except Exception as e:
+    logger.error(f"Failed to create application: {e}", exc_info=True)
+    sys.exit(1)
 
 
 def main():
